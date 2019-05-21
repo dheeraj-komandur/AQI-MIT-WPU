@@ -68,6 +68,8 @@ public class TodayActivity extends AppCompatActivity {
                     return true;
                 }
                 case R.id.navigation_aboutus: {
+                    Intent intent = new Intent(TodayActivity.this, Graph.class);
+                    startActivity(intent);
                     return true;
                 }
             }
