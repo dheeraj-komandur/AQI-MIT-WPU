@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "187363327701",
+    "firebase_url": "https://aqi-mit-wpu.firebaseio.com",
+    "project_id": "aqi-mit-wpu",
+    "storage_bucket": "aqi-mit-wpu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187363327701:android:eb014d0257239dec",
+        "android_client_info": {
+          "package_name": "in.creationdevs.aqi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187363327701-oicgugmpob0ripdbp40t6knan1ipusuh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.creationdevs.aqi",
+            "certificate_hash": "566832d653e3279ffe76092de4fae858e7ba3d46"
+          }
+        },
+        {
+          "client_id": "187363327701-h392t37tjfe2cmaku8ioahihl0mgmtqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB60OZvaVstadR5MhJ-MfPe_BfVqLNwk20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187363327701-h392t37tjfe2cmaku8ioahihl0mgmtqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

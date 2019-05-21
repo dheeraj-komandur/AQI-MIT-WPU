@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:text="AQI - Air Quality Index"
                 android:textColor="#ffffff"
-                android:textSize="22sp"
+                android:textSize="22dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -44,23 +44,23 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Good (0-50)"
                     android:textColor="#00ff00"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Advisory: Enjoy the day."
                     android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Risk: No risk to all"
                     android:textColor="#ffffff" />
 
@@ -76,23 +76,23 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Satisfactory (51-100)"
                     android:textColor="#008800"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Advisory: Enjoy the day."
                     android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Risk: No risk "
                     android:textColor="#ffffff" />
 
@@ -108,23 +108,23 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Moderate (101-200)"
                     android:textColor="#ffff00"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Advisory: Very sensitive people should consider reducing longer/heavy exertion and heavy outdoor work."
                     android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Risk: Minor Health issues for sensitive people, no problem to general public. "
                     android:textColor="#ffffff" />
 
@@ -140,16 +140,16 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Poor (201-300)"
                     android:textColor="#ffa500"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Advisory: People with heart or lung disease, older adults and children should reduce longer or heavy exertion and outdoor activity"
                     android:textColor="#ffffff" />
 
@@ -172,16 +172,16 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Very Poor (301-400)"
                     android:textColor="#ff0000"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Advisory: Everyone should reduce heavy exertion."
                     android:textColor="#ffffff" />
 
@@ -204,26 +204,26 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Severe (401-500)"
                     android:textColor="#A52A2A"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Advisory: Everyone should avoid any outdoor physical activity"
                     android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:text="Health Risk: Serious risk of respiratory problems."
                     android:textColor="#ffffff"
-                    android:layout_marginBottom="80sp"
+                    android:layout_marginBottom="80dp"
          />
 
             </LinearLayout>

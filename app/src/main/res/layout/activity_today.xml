@@ -26,7 +26,7 @@
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:padding="10sp"
+        android:padding="10dp"
         android:layout_height="match_parent"
         android:fillViewport="false"
         android:orientation="vertical"
@@ -42,7 +42,7 @@
         <TextView
             android:id="@+id/textview_todaysdate"
             android:layout_gravity="center"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:text="Today's Date: 08/5/2019"
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="300sp">
+            android:layout_height="300dp">
 
             <com.github.anastr.speedviewlib.ImageSpeedometer
 
@@ -84,10 +84,10 @@
                 android:id="@+id/textview_aqi_desp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="3sp"
+                android:padding="3dp"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="30sp"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
                 app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
@@ -102,7 +102,7 @@
                 android:gravity="center"
                 android:text="AQI"
                 android:textColor="#ffffff"
-                android:textSize="30sp"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
                 app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
@@ -118,7 +118,7 @@
                 android:gravity="center"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="30sp"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
                 app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
@@ -133,12 +133,12 @@
         </LinearLayout>
 
         <Button
-            android:layout_marginTop="7sp"
+            android:layout_marginTop="7dp"
             android:background="#000000"
-            android:layout_marginBottom="7sp"
-            android:textSize="3sp"
+            android:layout_marginBottom="7dp"
+            android:textSize="3dp"
             android:layout_width="match_parent"
-            android:layout_height="3sp" />
+            android:layout_height="3dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -149,31 +149,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text="Pollutant"
                 android:textColor="#ffffff"
-                android:textSize="25sp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_marginLeft="5sp"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Value"
                 android:textColor="#ffffff"
-                android:textSize="25sp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Description"
                 android:textColor="#ffffff"
-                android:textSize="25sp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -187,30 +187,30 @@
             <TextView
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text="SO2         "
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/textview_so2"
                 android:layout_width="63dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
             <TextView
                 android:id="@+id/textview_so2_desp"
-                android:layout_width="165sp"
+                android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text=""
                 android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -221,31 +221,31 @@
             <TextView
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text="NO2         "
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/textview_no2"
                 android:layout_width="63dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
             <TextView
                 android:gravity="center"
                 android:id="@+id/textview_no2_desp"
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text=""
                 android:textStyle="bold"
 
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -256,31 +256,31 @@
             <TextView
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text="PM 10     "
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/textview_pm10"
                 android:layout_width="63dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
             <TextView
                 android:gravity="center"
                 android:id="@+id/textview_pm10_desp"
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text=""
                 android:textStyle="bold"
 
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -290,49 +290,40 @@
             <TextView
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text="PM 2.5"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/textview_pm25"
                 android:layout_width="63dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
             <TextView
                 android:gravity="center"
                 android:id="@+id/textview_pm25_desp"
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="10dp"
                 android:text=""
                 android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
         </LinearLayout>
         <Button
-            android:layout_marginTop="5sp"
+            android:layout_marginTop="5dp"
             android:background="#000000"
-            android:layout_marginBottom="5sp"
-            android:textSize="3sp"
+            android:layout_marginBottom="75dp"
+            android:textSize="3dp"
             android:layout_width="match_parent"
-            android:layout_height="3sp" />
-        <Button
-            android:onClick="showHistory"
-            android:layout_marginTop="10sp"
-            android:layout_gravity="center"
-            android:textSize="25sp"
-            android:textAllCaps="false"
-            android:text="View History"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
+            android:layout_height="3dp"
             />
+
         <!--
         <Button
             android:onClick="previousdate"

@@ -15,22 +15,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="350dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/mitlogosvgwhite"
-        />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="350dp"
+            android:layout_height="87dp"
+            android:layout_gravity="center"
+            android:src="@drawable/mitlogosvgwhite" />
 
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:id="@+id/earth"
-        android:layout_width="wrap_content"
-        android:layout_height="280dp"
-        android:src="@drawable/earth"
-        />
+        <ImageView
+            android:id="@+id/earth"
+            android:layout_width="wrap_content"
+            android:layout_height="264dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/earth" />
 
     <TextView
         android:layout_marginTop="20dp"
@@ -38,7 +35,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textview_load"
         android:gravity="center"
-        android:textSize="28sp"
+        android:textSize="28dp"
         android:textStyle="bold"
         android:text="AIR QUALITY INDEX"
         android:textColor="#ffffff"/>
@@ -77,7 +74,7 @@
         android:text="Because Breathing Matters"
         android:gravity="center"
         android:id="@+id/know"
-        android:textSize="24sp"
+        android:textSize="24dp"
         android:textColor="#ffffff"
         />
 
@@ -92,7 +89,7 @@
         android:textColor="#ffffff"
         android:id="@+id/textquote"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:text="Real Time Air Quality \n information for MIT-WPU "
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

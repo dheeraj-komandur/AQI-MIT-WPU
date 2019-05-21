@@ -1,4 +1,6 @@
 package in.creationdevs.aqi;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,6 +8,7 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +27,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.github.anastr.speedviewlib.ImageSpeedometer;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -178,11 +184,11 @@ public class TodayActivity extends AppCompatActivity {
                         for (int i = 0; i < length; i++) {
 
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String dateget = jsonObject.getString("COL 2");
+                            String dateget = jsonObject.getString("COL2");
 
                             if (dateget.equals(dateString)) {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                                String so2 = jsonObject.getString("COL 8");
+                                String so2 = jsonObject.getString("COL8");
                                 textViewSO2.setText(so2);
                                 editor.putString("SO2", so2);
                                 String valso2 = GetDesp(so2);
@@ -192,7 +198,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewSO2Desp.setBackgroundColor(Color.parseColor(Colso2));
 
 
-                                String no2 = jsonObject.getString("COL 9");
+                                String no2 = jsonObject.getString("COL9");
                                 textViewNO2.setText(no2);
                                 editor.putString("NO2", no2);
                                 String valno2 = GetDesp(no2);
@@ -202,7 +208,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewNO2Desp.setBackgroundColor(Color.parseColor(Colno2));
 
 
-                                String pm25 = jsonObject.getString("COL 10");
+                                String pm25 = jsonObject.getString("COL10");
                                 textViewPM25.setText(pm25);
                                 editor.putString("PM25", pm25);
                                 String valpm25 = GetDesp(pm25);
@@ -212,7 +218,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewPM25Desp.setBackgroundColor(Color.parseColor(Colpm25));
 
 
-                                String pm10 = jsonObject.getString("COL 11");
+                                String pm10 = jsonObject.getString("COL11");
                                 textViewPM10.setText(pm10);
                                 editor.putString("PM10", pm10);
                                 String valpm10 = GetDesp(pm10);
@@ -222,7 +228,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewPM10Desp.setBackgroundColor(Color.parseColor(Colpm10));
 
 
-                                String aqi = jsonObject.getString("COL 12");
+                                String aqi = jsonObject.getString("COL12");
                                 textViewAQI.setText(aqi);
                                 editor.putString("AQI", aqi);
                                 String valaqi = GetDesp(aqi);
@@ -256,13 +262,40 @@ public class TodayActivity extends AppCompatActivity {
             else{
                 Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
             }
+
+
+        //Notification
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            NotificationChannel channel =
+                    new NotificationChannel("MyNotification","MyNotification",NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        FirebaseMessaging.getInstance().subscribeToTopic("general")
+                .addOnCompleteListener(new OnCompleteListener<Void>()
+                {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task)
+                    {
+                        String msg = "Successful";
+                        if (!task.isSuccessful()) {
+                            msg ="Failed";
+                        }
+                        // Log.d(TAG, msg);
+                       // Toast.makeText(TodayActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
         }
 
 
 
     public String GetDesp(String Value)
     {
-        if(Value.equals("NA"))
+        if(Value.equals("NA")) //NA is Hardcoded check database for nil,null etc
         {
             Value="-1";
         }
@@ -342,11 +375,6 @@ public class TodayActivity extends AppCompatActivity {
         Toast.makeText(TodayActivity.this, dateFormat.format(date), Toast.LENGTH_SHORT).show();
     }
 
-    public void showHistory(View view)
-    {
-        Intent intent = new Intent(TodayActivity.this,Graph.class);
-        startActivity(intent);
-    }
 
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager

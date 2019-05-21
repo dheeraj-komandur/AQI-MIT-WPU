@@ -1,35 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#FFFFFF">
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/bar"
-        android:layout_width="320dp"
-        android:layout_height="202dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="59dp">
-
-    </com.github.mikephil.charting.charts.BarChart>
+    tools:context=".Graph"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
 
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Graph"
+        android:background="@drawable/background_gradient"
+        android:padding="15sp">
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/linechart"
-        android:layout_width="320dp"
-        android:layout_height="200dp"
-        android:layout_alignStart="@+id/bar"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="81dp"
-        app:layout_constraintTop_toBottomOf="@id/bar">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WEEKLY STATS: "
+            android:textColor="#ffffff"
+            android:id="@+id/weekly"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            />
 
-    </com.github.mikephil.charting.charts.LineChart>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:layout_marginBottom="30dp">
+
+        </com.github.mikephil.charting.charts.BarChart>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/monthly"
+            android:layout_height="wrap_content"
+            android:text="MONTHLY STATS: "
+            android:textColor="#ffffff"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="81dp"
+            app:layout_constraintTop_toBottomOf="@id/bar"
+            >
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+    </LinearLayout>
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
@@ -44,4 +73,5 @@
         app:itemIconTint="@drawable/bottom_nav_colours"
         app:itemTextColor="@drawable/bottom_nav_colours"
         />
-</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,10 +1,15 @@
 package in.creationdevs.aqi;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -17,12 +22,16 @@ import com.android.volley.toolbox.Volley;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -34,7 +43,30 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Graph extends AppCompatActivity {
-        Calendar cal;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_today: {
+                    Intent intent = new Intent(Graph.this, TodayActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                case R.id.navigation_legend: {
+                    Intent intent = new Intent(Graph.this, MainActivity.class);
+                    return true;
+                }
+                case R.id.navigation_aboutus: {
+                    return false;
+                }
+            }
+            return false;
+        }
+    };
+
+    Calendar cal;
     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     Date date;
     String dateString;
@@ -43,71 +75,38 @@ public class Graph extends AppCompatActivity {
     LineChart lineChart;
     BarData dataa;
     ArrayList<BarEntry> barEntries = new ArrayList<>(); // Y_AXIS DATA
+    ArrayList<Entry> yvalues = new ArrayList<>();
 
+
+    String[] quarters = new String[7];
+    String[] q = new String[32];
+
+    ValueFormatter formatter = new ValueFormatter() {
+        @Override
+        public String getAxisLabel(float value, AxisBase axis) {
+            return quarters[(int) value];
+        }
+    };
+    ValueFormatter formatter_line_chart = new ValueFormatter() {
+        @Override
+        public String getAxisLabel(float value, AxisBase axis) {
+            return q[(int) value];
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
-        float t;
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.getMenu().getItem(0).setChecked(true);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         cal = Calendar.getInstance();
         date = cal.getTime();
         dateString = dateFormat.format(date);
         barChart = (BarChart) findViewById(R.id.bar);
-
-
-        RequestQueue queue = Volley.newRequestQueue(Graph.this);
-        String url = "http://creationdevs.in/AirIndex/fetch.php";
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-                //Function Parse JSON
-                try {
-
-                    JSONArray jsonArray = new JSONArray(response);
-                        int length = jsonArray.length();
-                        String[] s = new String[length];
-                        for (int i = 1; i < length; i++) {
-
-                            cal.add(Calendar.DAY_OF_MONTH, -i); //Goes to previous day
-                            date = cal.getTime();
-                            dateString = dateFormat.format(date);
-
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String dateget = jsonObject.getString("COL 2");
-                            String aqiget = jsonObject.getString("COL 12");
-
-                            if(i==9) {
-                                Toast.makeText(Graph.this, dateString + " " + String.valueOf(i), Toast.LENGTH_SHORT).show();
-                                //t = Float.parseFloat(aqiget);
-                            }
-                        }
-                }
-                    catch (Exception exe) {
-                        Toast.makeText(Graph.this, "JSON Error" + exe.toString(), Toast.LENGTH_SHORT).show();
-                    }
-
-
-
-            }
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Graph.this, "Internet / DataBase Offline", Toast.LENGTH_LONG).show();
-
-            }
-        }
-        );
-        queue.add(stringRequest);
-        /*
         lineChart=(LineChart) findViewById(R.id.linechart);
 
-        barEntries.add(new BarEntry(2f,20f));
-        barEntries.add(new BarEntry(3f,35f));
-        barEntries.add(new BarEntry(4f,40f));
-        barEntries.add(new BarEntry(6f,42f));
-        barEntries.add(new BarEntry(7f,38f));
+
 
 
 
@@ -125,7 +124,7 @@ public class Graph extends AppCompatActivity {
         lineChart.getXAxis().setTextColor(Color.parseColor("#ffffff"));
 
         lineChart.getDescription().setEnabled(false);
-        //lineChart.getDescription().setText("DAILY");
+        lineChart.getDescription().setText("MONTHLY");
         //lineChart.getDescription().setTextColor(Color.parseColor("#ffffff"));
         //lineChart.getDescription().setTextSize(14);
         //lineChart.getDescription().setPosition(200,300);
@@ -140,7 +139,114 @@ public class Graph extends AppCompatActivity {
         //lineChart.setGridBackgroundColor(Color.parseColor("#ffffff"));
         //lineChart.setBackgroundColor(Color.parseColor("#778899"));
 
-        ArrayList<Entry> yvalues = new ArrayList<>();
+
+
+
+
+        RequestQueue queue = Volley.newRequestQueue(Graph.this);
+        String url = "http://creationdevs.in/AirIndex/fetch.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            float t;
+
+            @Override
+            public void onResponse(String response) {
+                Handler handler;
+                Calendar c = Calendar.getInstance();
+
+                //Function Parse JSON
+                try {
+
+                    JSONArray jsonArray = new JSONArray(response);
+                    int length = jsonArray.length();
+                    String[] s = new String[length];
+                    // cal.add(Calendar.DAY_OF_MONTH, ); //Goes to previous day
+                    for (int x = 0; x < 7; x++) {
+                        date = cal.getTime();
+                        dateString = dateFormat.format(date);
+                        for (int i = 1; i < length; i++) {
+
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            String dateget = jsonObject.getString("COL2");
+                            String aqiget = jsonObject.getString("COL12");
+                            Log.d(dateget, dateString);
+                            if (dateget.equals(dateString)) {
+                                if(x == 0){
+                                    quarters[x] = "Today";
+                                }
+                                else if(x == 1)
+                                    quarters[x] = "Yesterday";
+                                else {
+                                    c.setTime(date);
+                                    quarters[x] = getDay(c.get(Calendar.DAY_OF_WEEK));
+                                }
+                                barEntries.add(new BarEntry((float)x, Float.parseFloat(aqiget)));
+
+                               // Toast.makeText(Graph.this, dateString + " " + String.valueOf(i), Toast.LENGTH_SHORT).show();
+                                break;
+                                //t = Float.parseFloat(aqiget);
+                            }
+                        }
+                        cal.add(Calendar.DAY_OF_MONTH, -1); //Goes to previous day
+
+                    }
+                    for (int x = 0; x < 51; x++) {
+                        date = cal.getTime();
+                        dateString = dateFormat.format(date);
+                        for (int i = 1; i < length; i++) {
+
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            String dateget = jsonObject.getString("COL2");
+                            String aqiget = jsonObject.getString("COL12");
+                            Log.d(dateget, dateString);
+                            if (dateget.equals(dateString)) {
+
+
+                                yvalues.add(new Entry((float)x, Float.parseFloat(aqiget)));
+
+                               // Toast.makeText(Graph.this, dateString + " " + String.valueOf(i), Toast.LENGTH_SHORT).show();
+                                break;
+                                //t = Float.parseFloat(aqiget);
+                            }
+                        }
+                        cal.add(Calendar.DAY_OF_MONTH, -1); //Goes to previous day
+                    }
+                    handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            setgraph();
+                            barChart.invalidate();
+                            lineChart.invalidate();
+                        }
+                    }, 20);
+                } catch (Exception exe) {
+                    Toast.makeText(Graph.this, "JSON Error" + exe.toString(), Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Graph.this, "Internet / DataBase Offline", Toast.LENGTH_LONG).show();
+
+            }
+        }
+        );
+        queue.add(stringRequest);
+
+        // setgraph();
+        /*
+
+        barEntries.add(new BarEntry(2f,20f));
+        barEntries.add(new BarEntry(3f,35f));
+        barEntries.add(new BarEntry(4f,40f));
+        barEntries.add(new BarEntry(6f,42f));
+        barEntries.add(new BarEntry(7f,38f));
+
+
+
 
         yvalues.add(new Entry(1f,30f));
         yvalues.add(new Entry(2f,20f));
@@ -148,6 +254,34 @@ public class Graph extends AppCompatActivity {
         yvalues.add(new Entry(4f,40f));
         yvalues.add(new Entry(5f,42f));
         yvalues.add(new Entry(6f,38f));
+
+
+        */
+    }
+
+    public void setgraph() {
+        barDataSet = new BarDataSet(barEntries, "AQI");
+        //barDataSet.setColor(Color.parseColor("#000000"));
+        barDataSet.setValueTextColor(Color.parseColor("#ffffff"));
+        dataa = new BarData(barDataSet);
+        barChart.setData(dataa);
+
+        barChart.setTouchEnabled(true);
+        barChart.setDragEnabled(true);
+        barChart.setScaleEnabled(true);
+        barChart.getDescription().setEnabled(false);
+        barChart.getDescription().setText("WEEKLY");
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis.setTextColor(Color.parseColor("#ffffff"));
+        xAxis.setValueFormatter(formatter);
+        YAxis yAxis = barChart.getAxisRight();
+        yAxis.setTextColor(Color.parseColor("#ffffff"));
+
+
+
+
+
 
         LineDataSet set = new LineDataSet(yvalues,"AQI");
         set.setCircleColor(Color.parseColor("#ffffff"));
@@ -159,20 +293,28 @@ public class Graph extends AppCompatActivity {
         LineData dataaa =new LineData(set);
         lineChart.setData(dataaa);
         set.setFillAlpha(110);
-        */
+        //XAxis x = lineChart.getXAxis();
+        //  x.setValueFormatter(formatter_line_chart);
+
     }
 
-    public void setgraph()
-    {
-        barEntries.add(new BarEntry(1f,20f));
-
-        barDataSet  = new BarDataSet(barEntries,"AQI");
-        dataa = new BarData(barDataSet);
-        barChart.setData(dataa);
-
-        barChart.setTouchEnabled(true);
-        barChart.setDragEnabled(true);
-        barChart.setScaleEnabled(true);
-
+    public String getDay(int day){
+        switch (day){
+            case 1:
+                return "Mon";
+            case 2:
+                return "Tue";
+            case 3:
+                return "Wed";
+            case 4:
+                return "Thur";
+            case 5:
+                return "Fri";
+            case 6:
+                return "Sat";
+            case 7:
+                return "Sun";
+        }
+        return "Error";
     }
 }

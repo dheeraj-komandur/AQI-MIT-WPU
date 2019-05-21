@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 case R.id.navigation_aboutus: {
-                    return false;
+                    Intent intent = new Intent(MainActivity.this, Graph.class);
+                    startActivity(intent);
+                    return true;
                 }
             }
             return false;
