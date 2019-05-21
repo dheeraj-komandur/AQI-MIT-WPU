@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
+<LinearLayout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:padding="10sp"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp"
+        >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textview_todaysdate"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="Today's Date: 08/5/2019"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300sp">
+
+            <com.github.anastr.speedviewlib.ImageSpeedometer
+
+                android:id="@+id/imageSpeedometer"
+                android:layout_width="288dp"
+                android:layout_height="264dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:sv_image="@drawable/safargauge"
+                app:sv_indicator="TriangleIndicator"
+                app:sv_indicatorColor="#a750bcff"
+                app:sv_speedTextColor="@android:color/transparent"
+                app:sv_speedTextPosition="CENTER"
+                app:sv_unitTextColor="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/textview_aqi_desp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3sp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
+                app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
+                app:layout_constraintStart_toStartOf="@+id/imageSpeedometer"
+                app:layout_constraintTop_toTopOf="@+id/imageSpeedometer"
+                app:layout_constraintVertical_bias="0.659" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="85dp"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:text="AQI"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
+                app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="@+id/imageSpeedometer"
+                app:layout_constraintTop_toTopOf="@+id/imageSpeedometer"
+                app:layout_constraintVertical_bias="0.297" />
+
+            <TextView
+                android:id="@+id/textview_aqi"
+                android:layout_width="85dp"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
+                app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="@+id/imageSpeedometer"
+                app:layout_constraintTop_toTopOf="@+id/imageSpeedometer"
+                app:layout_constraintVertical_bias="0.44" />
+
+
+
+        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="7sp"
+            android:background="#000000"
+            android:layout_marginBottom="7sp"
+            android:textSize="3sp"
+            android:layout_width="match_parent"
+            android:layout_height="3sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="Pollutant"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text="Value"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text="Description"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="SO2         "
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textview_so2"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+            <TextView
+                android:id="@+id/textview_so2_desp"
+                android:layout_width="165sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="NO2         "
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textview_no2"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/textview_no2_desp"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text=""
+                android:textStyle="bold"
+
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="PM 10     "
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textview_pm10"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/textview_pm10_desp"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text=""
+                android:textStyle="bold"
+
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="PM 2.5"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textview_pm25"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/textview_pm25_desp"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+        <Button
+            android:layout_marginTop="5sp"
+            android:background="#000000"
+            android:layout_marginBottom="5sp"
+            android:textSize="3sp"
+            android:layout_width="match_parent"
+            android:layout_height="3sp" />
+        <Button
+            android:onClick="showHistory"
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:textAllCaps="false"
+            android:text="View History"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            />
+        <!--
+        <Button
+            android:onClick="previousdate"
+            android:text="Previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="nextdate"
+            android:text="Previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        -->
+    </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+</LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#000E4A"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/bottom_nav_colours"
+        app:itemTextColor="@drawable/bottom_nav_colours"
+        />
+</android.support.constraint.ConstraintLayout>

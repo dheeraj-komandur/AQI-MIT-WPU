@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="AQI - Air Quality Index"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="@drawable/myrect">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Good (0-50)"
+                    android:textColor="#00ff00"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Advisory: Enjoy the day."
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Risk: No risk to all"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/myrect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Satisfactory (51-100)"
+                    android:textColor="#008800"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Advisory: Enjoy the day."
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Risk: No risk "
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/myrect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Moderate (101-200)"
+                    android:textColor="#ffff00"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Advisory: Very sensitive people should consider reducing longer/heavy exertion and heavy outdoor work."
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Risk: Minor Health issues for sensitive people, no problem to general public. "
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/myrect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Poor (201-300)"
+                    android:textColor="#ffa500"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Advisory: People with heart or lung disease, older adults and children should reduce longer or heavy exertion and outdoor activity"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Risk: Elderly at risk. Health may start to experience slight discomfort."
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/myrect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Very Poor (301-400)"
+                    android:textColor="#ff0000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Advisory: Everyone should reduce heavy exertion."
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Risk: Triggers health alert, Everyone may experience health effects. Significant increase in respiratory problems. "
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/myrect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Severe (401-500)"
+                    android:textColor="#A52A2A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Advisory: Everyone should avoid any outdoor physical activity"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:text="Health Risk: Serious risk of respiratory problems."
+                    android:textColor="#ffffff"
+                    android:layout_marginBottom="80sp"
+         />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#000E4A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/bottom_nav_colours"
+        app:itemTextColor="@drawable/bottom_nav_colours"
+        />
+
+</android.support.constraint.ConstraintLayout>
