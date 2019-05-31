@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
     android:orientation="vertical"
     android:background="@drawable/background_gradient">
+    <ScrollView
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp">
     <LinearLayout android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="264dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/earth" />
+            android:src="@drawable/earthwithoutlines" />
 
     <TextView
         android:layout_marginTop="20dp"
@@ -71,7 +83,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Because Breathing Matters"
+        android:text="Because Air You Breathe Matters"
         android:gravity="center"
         android:id="@+id/know"
         android:textSize="24dp"
@@ -95,5 +107,21 @@
         android:layout_height="wrap_content" />
 
 </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#000E4A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/bottom_nav_colours"
+        app:itemTextColor="@drawable/bottom_nav_colours"
+        />
 
 </android.support.constraint.ConstraintLayout>

@@ -44,7 +44,7 @@ import java.util.Locale;
 public class TodayActivity extends AppCompatActivity {
 
     public static final String PREFERENCES = "VALUES";
-    TextView textViewSO2,textViewNO2,textViewPM25,textViewPM10,textViewAQI;
+    TextView textViewSO2,textViewNO2,textViewPM25,textViewPM10,textViewAQI,textViewAdvisory,textViewRisk;
     TextView textViewSO2Desp,textViewNO2Desp,textViewPM25Desp,textViewPM10Desp,textViewAQIDesp;
     String TodayDate;
     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -106,6 +106,9 @@ public class TodayActivity extends AppCompatActivity {
         textViewPM10Desp = findViewById(R.id.textview_pm10_desp);
         textViewAQIDesp = findViewById(R.id.textview_aqi_desp);
 
+        //Get Risk and advisory textview
+        textViewAdvisory=findViewById(R.id.textview_advisory);
+        textViewRisk = findViewById(R.id.textview_risk);
 
         //Write code to get today date from the android device
 
@@ -165,6 +168,9 @@ public class TodayActivity extends AppCompatActivity {
             textViewAQIDesp.setBackgroundColor(Color.parseColor(Colaqi));
 
             imageSpeedometer.speedTo(Integer.parseInt(aqi));
+
+            textViewRisk.setText(getSuggestionsHR(aqi));
+            textViewAdvisory.setText(getSuggestionsHA(aqi)+"\n");
 
 
         }
@@ -240,6 +246,10 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewAQIDesp.setBackgroundColor(Color.parseColor(Colaqi));
 
                                 imageSpeedometer.speedTo(Integer.parseInt(aqi));
+
+                                textViewRisk.setText(getSuggestionsHR(aqi));
+                                textViewAdvisory.setText(getSuggestionsHA(aqi)+"\n");
+
 
                                 editor.commit();
                             }
@@ -359,6 +369,78 @@ public class TodayActivity extends AppCompatActivity {
         }
 
         return "#FFFFFF";
+    }
+
+    public String getSuggestionsHA(String Value)
+    {
+        if(Value.equals("NA")) //NA is Hardcoded check database for nil,null etc
+        {
+            Value="-1";
+        }
+        int value = Integer.valueOf(Value);
+
+        if(value >= 0 && value <= 50)
+        {
+            return "Health Advisory: Enjoy the day.";
+        }
+        else if(value >=51  && value <= 100)
+        {
+            return "Health Advisory: Enjoy the day.";
+        }
+        else if(value >=101  && value <= 200)
+        {
+            return "Health Advisory: Very sensitive people should consider reducing longer/heavy exertion and heavy outdoor work.";
+        }
+        else if(value >=201  && value <= 300)
+        {
+            return "Health Advisory: People with heart or lung disease, older adults and children should reduce longer or heavy exertion and outdoor activity";
+        }
+        else if(value >=301  && value <= 400)
+        {
+            return "Health Advisory: Everyone should reduce heavy exertion.";
+        }
+        else if(value >=401  && value <= 500)
+        {
+            return "Health Advisory: Everyone should avoid any outdoor physical activity";
+        }
+
+        return "No Data";
+    }
+
+    public String getSuggestionsHR(String Value)
+    {
+        if(Value.equals("NA")) //NA is Hardcoded check database for nil,null etc
+        {
+            Value="-1";
+        }
+        int value = Integer.valueOf(Value);
+
+        if(value >= 0 && value <= 50)
+        {
+            return "Health Risk: No risk to all";
+        }
+        else if(value >=51  && value <= 100)
+        {
+            return "Health Risk: No risk";
+        }
+        else if(value >=101  && value <= 200)
+        {
+            return "Health Risk: Minor Health issues for sensitive people, no problem to general public.";
+        }
+        else if(value >=201  && value <= 300)
+        {
+            return "Health Risk: Elderly at risk. Health may start to experience slight discomfort.";
+        }
+        else if(value >=301  && value <= 400)
+        {
+            return "Health Risk: Triggers health alert, Everyone may experience health effects. Significant increase in respiratory problems.";
+        }
+        else if(value >=401  && value <= 500)
+        {
+            return "Health Risk: Serious risk of respiratory problems.";
+        }
+
+        return "No Data";
     }
 
     public void previousdate(View view)

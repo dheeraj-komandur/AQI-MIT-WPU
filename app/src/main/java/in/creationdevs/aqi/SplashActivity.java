@@ -2,8 +2,11 @@ package in.creationdevs.aqi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -13,6 +16,31 @@ public class SplashActivity extends AppCompatActivity {
     Handler handler;
     TextView load,know,quote;
     ImageView image,earth,hub;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_today: {
+                    Intent intent = new Intent(SplashActivity.this, TodayActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                case R.id.navigation_legend: {
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                case R.id.navigation_aboutus: {
+                    Intent intent = new Intent(SplashActivity.this, Graph.class);
+                    startActivity(intent);
+                    return true;
+                }
+            }
+            return false;
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +61,12 @@ public class SplashActivity extends AppCompatActivity {
         hub.startAnimation(myanim);
         quote.startAnimation(myanim);
 
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.getMenu().getItem(0).setChecked(true);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+
+        /*
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -42,6 +75,9 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },5000);*/
+
+
+
     }
 }

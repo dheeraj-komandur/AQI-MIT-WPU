@@ -140,6 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="3dp" />
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -316,13 +317,36 @@
                 android:textSize="25dp" />
         </LinearLayout>
         <Button
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="13dp"
             android:background="#000000"
-            android:layout_marginBottom="75dp"
             android:textSize="3dp"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             />
+
+        <TextView
+            android:id="@+id/textview_advisory"
+            android:text="Health Advisory : "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="17dp"/>
+        <TextView
+            android:id="@+id/textview_risk"
+            android:text="Health Risk : "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="17dp"/>
+
+
+        <Button
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:textSize="3dp"
+            android:layout_marginBottom="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
 
         <!--
         <Button

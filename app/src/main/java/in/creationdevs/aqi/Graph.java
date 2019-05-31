@@ -56,10 +56,11 @@ public class Graph extends AppCompatActivity {
                 }
                 case R.id.navigation_legend: {
                     Intent intent = new Intent(Graph.this, MainActivity.class);
+                    startActivity(intent);
                     return true;
                 }
                 case R.id.navigation_aboutus: {
-                    return false;
+                    return true;
                 }
             }
             return false;
