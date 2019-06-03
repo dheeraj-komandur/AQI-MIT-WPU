@@ -24,8 +24,13 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_legend: {
                     return true;
                 }
-                case R.id.navigation_aboutus: {
+                case R.id.navigation_history: {
                     Intent intent = new Intent(MainActivity.this, Graph.class);
+                    startActivity(intent);
+                    return true;
+                }
+                case R.id.navigation_aboutus: {
+                    Intent intent = new Intent(MainActivity.this, AboutUs.class);
                     startActivity(intent);
                     return true;
                 }

@@ -59,7 +59,12 @@ public class Graph extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
+                case R.id.navigation_history: {
+                    return true;
+                }
                 case R.id.navigation_aboutus: {
+                    Intent intent = new Intent(Graph.this, AboutUs.class);
+                    startActivity(intent);
                     return true;
                 }
             }
@@ -99,7 +104,7 @@ public class Graph extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.getMenu().getItem(0).setChecked(true);
+        navigation.getMenu().getItem(2).setChecked(true);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         cal = Calendar.getInstance();
         date = cal.getTime();

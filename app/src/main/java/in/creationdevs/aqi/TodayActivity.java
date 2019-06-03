@@ -67,8 +67,13 @@ public class TodayActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
-                case R.id.navigation_aboutus: {
+                case R.id.navigation_history: {
                     Intent intent = new Intent(TodayActivity.this, Graph.class);
+                    startActivity(intent);
+                    return true;
+                }
+                case R.id.navigation_aboutus: {
+                    Intent intent = new Intent(TodayActivity.this, AboutUs.class);
                     startActivity(intent);
                     return true;
                 }
@@ -93,15 +98,15 @@ public class TodayActivity extends AppCompatActivity {
         imageSpeedometer.setWithTremble(false);
 
         //Find All Text Views Value
-        textViewSO2 = findViewById(R.id.textview_so2);
-        textViewNO2 = findViewById(R.id.textview_no2);
+        //textViewSO2 = findViewById(R.id.textview_so2);
+        //textViewNO2 = findViewById(R.id.textview_no2);
         textViewPM25 = findViewById(R.id.textview_pm25);
         textViewPM10 = findViewById(R.id.textview_pm10);
         textViewAQI = findViewById(R.id.textview_aqi);
 
         //Find All Text View Description
-        textViewSO2Desp = findViewById(R.id.textview_so2_desp);
-        textViewNO2Desp = findViewById(R.id.textview_no2_desp);
+        //textViewSO2Desp = findViewById(R.id.textview_so2_desp);
+        //textViewNO2Desp = findViewById(R.id.textview_no2_desp);
         textViewPM25Desp = findViewById(R.id.textview_pm25_desp);
         textViewPM10Desp = findViewById(R.id.textview_pm10_desp);
         textViewAQIDesp = findViewById(R.id.textview_aqi_desp);
@@ -122,7 +127,7 @@ public class TodayActivity extends AppCompatActivity {
         //Toast.makeText(TodayActivity.this, dateFormat.format(date), Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCES,MODE_PRIVATE);
         if(sharedPreferences.getString("AQI",null)!=null){
-
+            /*
             String so2 = sharedPreferences.getString("SO2",null);
             textViewSO2.setText(so2);
             String valso2 = GetDesp(so2);
@@ -139,7 +144,7 @@ public class TodayActivity extends AppCompatActivity {
             String Colno2 = GetColor(valno2);
             textViewNO2Desp.setTextColor(Color.parseColor("#FFFFFF"));
             textViewNO2Desp.setBackgroundColor(Color.parseColor(Colno2));
-
+            */
 
             String pm25 = sharedPreferences.getString("PM25",null);
             textViewPM25.setText(pm25);
@@ -196,6 +201,7 @@ public class TodayActivity extends AppCompatActivity {
 
                             if (dateget.equals(dateString)) {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                                /*
                                 String so2 = jsonObject.getString("COL8");
                                 textViewSO2.setText(so2);
                                 editor.putString("SO2", so2);
@@ -205,7 +211,6 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewSO2Desp.setTextColor(Color.parseColor("#FFFFFF"));
                                 textViewSO2Desp.setBackgroundColor(Color.parseColor(Colso2));
 
-
                                 String no2 = jsonObject.getString("COL9");
                                 textViewNO2.setText(no2);
                                 editor.putString("NO2", no2);
@@ -214,7 +219,7 @@ public class TodayActivity extends AppCompatActivity {
                                 String Colno2 = GetColor(valno2);
                                 textViewNO2Desp.setTextColor(Color.parseColor("#FFFFFF"));
                                 textViewNO2Desp.setBackgroundColor(Color.parseColor(Colno2));
-
+                                */
 
                                 String pm25 = jsonObject.getString("COL10");
                                 textViewPM25.setText(pm25);

@@ -32,8 +32,13 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
-                case R.id.navigation_aboutus: {
+                case R.id.navigation_history: {
                     Intent intent = new Intent(SplashActivity.this, Graph.class);
+                    startActivity(intent);
+                    return true;
+                }
+                case R.id.navigation_aboutus: {
+                    Intent intent = new Intent(SplashActivity.this, AboutUs.class);
                     startActivity(intent);
                     return true;
                 }

@@ -14,8 +14,14 @@
         android:title="Legend" />
 
     <item
-        android:id="@+id/navigation_aboutus"
+        android:id="@+id/navigation_history"
         android:icon="@drawable/ic_history_black_24dp"
         android:title="History" />
 
+    <item
+        android:id="@+id/navigation_aboutus"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="About US" />
+
 </menu>
+

@@ -29,15 +29,16 @@
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="350dp"
-            android:layout_height="87dp"
+            android:layout_width="353dp"
+            android:layout_height="96dp"
             android:layout_gravity="center"
             android:src="@drawable/mitlogosvgwhite" />
 
         <ImageView
             android:id="@+id/earth"
-            android:layout_width="wrap_content"
-            android:layout_height="264dp"
+            android:layout_width="304dp"
+            android:layout_height="217dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:src="@drawable/earthwithoutlines" />
 
@@ -112,6 +113,7 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
+        app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"

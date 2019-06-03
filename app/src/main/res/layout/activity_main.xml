@@ -229,8 +229,18 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Supported By IITM,Pune"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation" />
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
+        app:labelVisibilityMode="labeled"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"

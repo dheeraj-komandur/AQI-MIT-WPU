@@ -39,6 +39,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <TextView
             android:id="@+id/textview_todaysdate"
             android:layout_gravity="center"
@@ -132,13 +134,32 @@
         </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Leading Pollutant : PM 2.5 "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+              </LinearLayout>
+
         <Button
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="13dp"
             android:background="#000000"
-            android:layout_marginBottom="7dp"
             android:textSize="3dp"
             android:layout_width="match_parent"
-            android:layout_height="3dp" />
+            android:layout_height="3dp"
+            android:layout_marginBottom="5dp" />
+
+
 
 
         <LinearLayout
@@ -178,7 +199,7 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
-
+        <!--
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -215,6 +236,7 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -249,7 +271,7 @@
                 android:textSize="25dp" />
 
         </LinearLayout>
-
+        -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -316,14 +338,14 @@
                 android:textColor="#ffffff"
                 android:textSize="25dp" />
         </LinearLayout>
+
         <Button
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="7dp"
             android:background="#000000"
             android:textSize="3dp"
+            android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
-            android:layout_height="3dp"
-            />
-
+            android:layout_height="3dp" />
         <TextView
             android:id="@+id/textview_advisory"
             android:text="Health Advisory : "
@@ -341,12 +363,13 @@
 
 
         <Button
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="13dp"
             android:background="#000000"
             android:textSize="3dp"
-            android:layout_marginBottom="75dp"
             android:layout_width="match_parent"
-            android:layout_height="3dp" />
+            android:layout_height="3dp"
+            android:layout_marginBottom="75dp"
+            />
 
         <!--
         <Button
@@ -366,12 +389,22 @@
 </LinearLayout>
 
 </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Supported By IITM,Pune"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation" />
     <android.support.design.widget.BottomNavigationView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
 
         android:id="@+id/navigation"
         android:layout_width="0dp"
+        app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
