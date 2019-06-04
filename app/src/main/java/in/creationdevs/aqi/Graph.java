@@ -23,6 +23,8 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -86,6 +88,8 @@ public class Graph extends AppCompatActivity {
 
     String[] quarters = new String[7];
     String[] q = new String[32];
+    int[] colours = new int[8];
+    int colour_count = 0;
 
     ValueFormatter formatter = new ValueFormatter() {
         @Override
@@ -99,6 +103,38 @@ public class Graph extends AppCompatActivity {
             return q[(int) value];
         }
     };
+
+    public String GetColor(int value)
+    {
+        if((value < 50))
+        {
+            return "#2ECC71";
+        }
+        else if(value < 100)
+        {
+            return "#196F3D";
+        }
+        else if(value < 200)
+        {
+            return "#D4AC0D";
+        }
+        else if(value < 300)
+        {
+            return "#F1C40F";
+        }
+        else if(value < 400)
+        {
+            return "#E74C3C";
+        }
+        else if(value < 500)
+        {
+            return "#C0392B";
+        }
+
+        return "#FFFFFF";
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,8 +147,6 @@ public class Graph extends AppCompatActivity {
         dateString = dateFormat.format(date);
         barChart = (BarChart) findViewById(R.id.bar);
         lineChart=(LineChart) findViewById(R.id.linechart);
-
-
 
 
 
@@ -179,14 +213,17 @@ public class Graph extends AppCompatActivity {
                                 if(x == 0){
                                     quarters[x] = "Today";
                                 }
-                                else if(x == 1)
+                                else if(x == 1) {
                                     quarters[x] = "Yesterday";
+                                    cal.add(Calendar.DAY_OF_MONTH, -1); //Goes to previous day
+                                }
                                 else {
                                     c.setTime(date);
                                     quarters[x] = getDay(c.get(Calendar.DAY_OF_WEEK));
                                 }
                                 barEntries.add(new BarEntry((float)x, Float.parseFloat(aqiget)));
-
+                                colours[colour_count] = Color.parseColor(GetColor(Integer.parseInt(aqiget)));
+                                colour_count++;
                                // Toast.makeText(Graph.this, dateString + " " + String.valueOf(i), Toast.LENGTH_SHORT).show();
                                 break;
                                 //t = Float.parseFloat(aqiget);
@@ -195,7 +232,7 @@ public class Graph extends AppCompatActivity {
                         cal.add(Calendar.DAY_OF_MONTH, -1); //Goes to previous day
 
                     }
-                    for (int x = 0; x < 51; x++) {
+                    for (int x = 0; x < 31; x++) {
                         date = cal.getTime();
                         dateString = dateFormat.format(date);
                         for (int i = 1; i < length; i++) {
@@ -208,7 +245,7 @@ public class Graph extends AppCompatActivity {
 
 
                                 yvalues.add(new Entry((float)x, Float.parseFloat(aqiget)));
-
+                                q[x] = dateString;
                                // Toast.makeText(Graph.this, dateString + " " + String.valueOf(i), Toast.LENGTH_SHORT).show();
                                 break;
                                 //t = Float.parseFloat(aqiget);
@@ -221,7 +258,7 @@ public class Graph extends AppCompatActivity {
                         @Override
                         public void run() {
                             setgraph();
-                            barChart.invalidate();
+                            barChart.animateXY(500, 500);
                             lineChart.invalidate();
                         }
                     }, 20);
@@ -269,21 +306,26 @@ public class Graph extends AppCompatActivity {
         barDataSet = new BarDataSet(barEntries, "AQI");
         //barDataSet.setColor(Color.parseColor("#000000"));
         barDataSet.setValueTextColor(Color.parseColor("#ffffff"));
+        barDataSet.setColors(colours);
         dataa = new BarData(barDataSet);
         barChart.setData(dataa);
-
+        Legend legend = barChart.getLegend();
+        legend.setEnabled(false);
         barChart.setTouchEnabled(true);
         barChart.setDragEnabled(true);
         barChart.setScaleEnabled(true);
         barChart.getDescription().setEnabled(false);
         barChart.getDescription().setText("WEEKLY");
+        Description description = barChart.getDescription();
+        description.setEnabled(true);
         XAxis xAxis = barChart.getXAxis();
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
         xAxis.setTextColor(Color.parseColor("#ffffff"));
         xAxis.setValueFormatter(formatter);
-        YAxis yAxis = barChart.getAxisRight();
+        YAxis yAxis = barChart.getAxisLeft();
         yAxis.setTextColor(Color.parseColor("#ffffff"));
-
+        YAxis yright = barChart.getAxisRight();
+        yright.setEnabled(false);
 
 
 
@@ -323,4 +365,5 @@ public class Graph extends AppCompatActivity {
         }
         return "Error";
     }
+
 }

@@ -32,7 +32,7 @@
             android:layout_width="353dp"
             android:layout_height="96dp"
             android:layout_gravity="center"
-            android:src="@drawable/mitlogosvgwhite" />
+            android:src="@drawable/mitwpucolor" />
 
         <ImageView
             android:id="@+id/earth"

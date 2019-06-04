@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:background="@drawable/background_gradient">
+
 <LinearLayout
 
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,12 +18,54 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:background="@drawable/background_gradient">
+    <LinearLayout
+        android:background="#538fd0"
+        android:id="@+id/header"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mitdome" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:text="Air Quality Service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="#ffffff"
+                android:textSize="13dp"
+                android:text="Dr. Vishwanath Karad World Peace University"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+    <Button
+        android:layout_marginTop="3dp"
+        android:background="#000000"
+        android:textSize="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="5dp" />
+
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -39,7 +82,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <TextView
             android:id="@+id/textview_todaysdate"
@@ -158,9 +200,6 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_marginBottom="5dp" />
-
-
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -393,7 +432,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Supported By IITM,Pune"
+        android:text="Developed By MIT-WPU, Pune"
         android:textColor="#ffffff"
         android:background="#000000"
         android:padding="2dp"

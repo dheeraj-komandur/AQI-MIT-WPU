@@ -67,7 +67,7 @@ public class SplashActivity extends AppCompatActivity {
         quote.startAnimation(myanim);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.getMenu().getItem(0).setChecked(true);
+        navigation.getMenu().getItem(0).setChecked(false);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
