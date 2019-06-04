@@ -61,9 +61,10 @@ public class Graph extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
-                case R.id.navigation_history: {
+              /*  case R.id.navigation_history: {
                     return true;
                 }
+                */
                 case R.id.navigation_aboutus: {
                     Intent intent = new Intent(Graph.this, AboutUs.class);
                     startActivity(intent);
@@ -206,8 +207,8 @@ public class Graph extends AppCompatActivity {
                         for (int i = 1; i < length; i++) {
 
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String dateget = jsonObject.getString("COL2");
-                            String aqiget = jsonObject.getString("COL12");
+                            String dateget = jsonObject.getString("COL1");
+                            String aqiget = jsonObject.getString("COL4");
                             Log.d(dateget, dateString);
                             if (dateget.equals(dateString)) {
                                 if(x == 0){
@@ -215,7 +216,7 @@ public class Graph extends AppCompatActivity {
                                 }
                                 else if(x == 1) {
                                     quarters[x] = "Yesterday";
-                                    cal.add(Calendar.DAY_OF_MONTH, -1); //Goes to previous day
+                                    cal.add(Calendar.DAY_OF_MONTH, -1);
                                 }
                                 else {
                                     c.setTime(date);
@@ -238,8 +239,8 @@ public class Graph extends AppCompatActivity {
                         for (int i = 1; i < length; i++) {
 
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String dateget = jsonObject.getString("COL2");
-                            String aqiget = jsonObject.getString("COL12");
+                            String dateget = jsonObject.getString("COL1");
+                            String aqiget = jsonObject.getString("COL4");
                             Log.d(dateget, dateString);
                             if (dateget.equals(dateString)) {
 
@@ -317,7 +318,6 @@ public class Graph extends AppCompatActivity {
         barChart.getDescription().setEnabled(false);
         barChart.getDescription().setText("WEEKLY");
         Description description = barChart.getDescription();
-        description.setEnabled(true);
         XAxis xAxis = barChart.getXAxis();
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
         xAxis.setTextColor(Color.parseColor("#ffffff"));
@@ -339,6 +339,8 @@ public class Graph extends AppCompatActivity {
         set.setValueTextSize(9);
         set.setValueTextColor(Color.parseColor("#ffffff"));
         LineData dataaa =new LineData(set);
+        XAxis x = lineChart.getXAxis();
+        x.setValueFormatter(formatter_line_chart);
         lineChart.setData(dataaa);
         set.setFillAlpha(110);
         //XAxis x = lineChart.getXAxis();

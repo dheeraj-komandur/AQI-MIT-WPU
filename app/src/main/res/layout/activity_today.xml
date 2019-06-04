@@ -26,10 +26,10 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:layout_width="61dp"
+            android:layout_height="64dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="7dp"
-            android:layout_width="75dp"
-            android:layout_height="60dp"
+            android:layout_marginLeft="3dp"
             android:src="@drawable/mitdome" />
         <LinearLayout
             android:orientation="vertical"
@@ -47,7 +47,7 @@
             <TextView
                 android:textColor="#ffffff"
                 android:textSize="13dp"
-                android:text="Dr. Vishwanath Karad World Peace University"
+                android:text="Dr. Vishwanath Karad MIT World Peace University"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -131,13 +131,13 @@
                 android:padding="3dp"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
                 app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"
                 app:layout_constraintStart_toStartOf="@+id/imageSpeedometer"
                 app:layout_constraintTop_toTopOf="@+id/imageSpeedometer"
-                app:layout_constraintVertical_bias="0.659" />
+                app:layout_constraintVertical_bias="0.616" />
 
             <TextView
                 android:id="@+id/textView"
@@ -158,11 +158,11 @@
             <TextView
                 android:id="@+id/textview_aqi"
                 android:layout_width="85dp"
-                android:layout_height="36dp"
+                android:layout_height="34dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="#ffffff"
-                android:textSize="30dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageSpeedometer"
                 app:layout_constraintEnd_toEndOf="@+id/imageSpeedometer"

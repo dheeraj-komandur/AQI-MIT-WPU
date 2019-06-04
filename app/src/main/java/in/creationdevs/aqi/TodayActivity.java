@@ -67,11 +67,12 @@ public class TodayActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
-                case R.id.navigation_history: {
+            /*    case R.id.navigation_history: {
                     Intent intent = new Intent(TodayActivity.this, Graph.class);
                     startActivity(intent);
                     return true;
                 }
+                */
                 case R.id.navigation_aboutus: {
                     Intent intent = new Intent(TodayActivity.this, AboutUs.class);
                     startActivity(intent);
@@ -197,7 +198,7 @@ public class TodayActivity extends AppCompatActivity {
                         for (int i = 0; i < length; i++) {
 
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String dateget = jsonObject.getString("COL2");
+                            String dateget = jsonObject.getString("COL1");
 
                             if (dateget.equals(dateString)) {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -221,7 +222,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewNO2Desp.setBackgroundColor(Color.parseColor(Colno2));
                                 */
 
-                                String pm25 = jsonObject.getString("COL10");
+                                String pm25 = jsonObject.getString("COL2");
                                 textViewPM25.setText(pm25);
                                 editor.putString("PM25", pm25);
                                 String valpm25 = GetDesp(pm25);
@@ -231,7 +232,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewPM25Desp.setBackgroundColor(Color.parseColor(Colpm25));
 
 
-                                String pm10 = jsonObject.getString("COL11");
+                                String pm10 = jsonObject.getString("COL3");
                                 textViewPM10.setText(pm10);
                                 editor.putString("PM10", pm10);
                                 String valpm10 = GetDesp(pm10);
@@ -241,7 +242,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewPM10Desp.setBackgroundColor(Color.parseColor(Colpm10));
 
 
-                                String aqi = jsonObject.getString("COL12");
+                                String aqi = jsonObject.getString("COL4");
                                 textViewAQI.setText(aqi);
                                 editor.putString("AQI", aqi);
                                 String valaqi = GetDesp(aqi);
@@ -250,7 +251,7 @@ public class TodayActivity extends AppCompatActivity {
                                 textViewAQIDesp.setTextColor(Color.parseColor("#FFFFFF"));
                                 textViewAQIDesp.setBackgroundColor(Color.parseColor(Colaqi));
 
-                                imageSpeedometer.speedTo(Integer.parseInt(aqi));
+                                imageSpeedometer.speedTo(Integer.parseInt(aqi) - 40);
 
                                 textViewRisk.setText(getSuggestionsHR(aqi));
                                 textViewAdvisory.setText(getSuggestionsHA(aqi)+"\n");
@@ -390,7 +391,7 @@ public class TodayActivity extends AppCompatActivity {
         }
         else if(value >=51  && value <= 100)
         {
-            return "Health Advisory: Enjoy the day.";
+            return "Health Advisory: AQI is satisfactory. Enjoy the fresh air.";
         }
         else if(value >=101  && value <= 200)
         {
