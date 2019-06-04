@@ -2,8 +2,133 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUs">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:background="#538fd0"
+    android:id="@+id/header"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="7dp"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:src="@drawable/mitdome" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="Air Quality Service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#ffffff"
+            android:textSize="13dp"
+            android:text="Dr. Vishwanath Karad World Peace University"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+    <Button
+        android:layout_marginTop="3dp"
+        android:background="#000000"
+        android:textSize="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="5dp" />
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="65dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="About Us"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="@drawable/myrect"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18dp"
+                    android:text="The MIT-AQI App brought to you by MITWPU Pune, has been launched with the technical support of SAFAR-India, Indian Institute of Tropical Meteorology. In addition to the real time information on the air quality index, the citizens can learn about associated health advisories and Do's and Don'ts."
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18dp"
+                    android:text="The app has been Designed and Developed by a team of students (Dheeraj Komandur, Shebin Silvister, Aditya Khochare, Uday More, Ashutosh Gugnani, Gaurav Sarawgi) from Second year of Computer Engineering of MITWPU"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <Button
+                android:onClick="kokate"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Developed By MIT-WPU,Pune"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation" />
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        app:labelVisibilityMode="labeled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#000E4A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/bottom_nav_colours"
+        app:itemTextColor="@drawable/bottom_nav_colours"
+        />
 
 </android.support.constraint.ConstraintLayout>
