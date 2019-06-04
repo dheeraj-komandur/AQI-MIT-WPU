@@ -41,7 +41,7 @@
             <TextView
                 android:textColor="#ffffff"
                 android:textSize="13dp"
-                android:text="Dr. Vishwanath Karad World Peace University"
+                android:text="Dr. Vishwanath Karad MIT World Peace University"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -66,6 +66,7 @@
 
 
     <LinearLayout
+        android:layout_marginTop="5dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"

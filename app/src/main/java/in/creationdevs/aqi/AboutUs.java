@@ -27,11 +27,11 @@ public class AboutUs extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
-                case R.id.navigation_history: {
+               /* case R.id.navigation_history: {
                     Intent intent = new Intent(AboutUs.this, Graph.class);
                     startActivity(intent);
                     return true;
-                }
+                }*/
                 case R.id.navigation_aboutus: {
                     return true;
                 }
@@ -45,7 +45,7 @@ public class AboutUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.getMenu().getItem(3).setChecked(true);
+        navigation.getMenu().getItem(2).setChecked(true);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 

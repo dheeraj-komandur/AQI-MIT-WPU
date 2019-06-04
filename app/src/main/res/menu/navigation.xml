@@ -12,13 +12,14 @@
         android:id="@+id/navigation_legend"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Legend" />
-
+<!--
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/ic_history_black_24dp"
         android:title="History" />
+        -->
 
-    <item
+   <item
         android:id="@+id/navigation_aboutus"
         android:icon="@drawable/ic_info_black_24dp"
         android:title="About US" />
