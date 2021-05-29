@@ -1,7 +1,7 @@
 # AQI MIT-WPU
 
 Members - 
-[Dheeraj Komandur](https://www.dheerajkomandur.com)
+[Dheeraj Komandur](https://www.dheerajkomandur.com),
 [Shebin Silvister](https://github.com/silvistershebin), 
 [Aditya Khochare](https://github.com/AdityaPune),
 [Uday More](https://github.com/udayvmore1),
@@ -9,7 +9,11 @@ Members -
 Gaurav Sarawgi
 ***
 
-Download the App - [AQI MIT-WPU](https://play.google.com/store/apps/details?id=in.creationdevs.aqi&hl=en_IN&gl=US)
+
+<a href="https://play.google.com/store/apps/details?id=in.creationdevs.aqi&hl=en_IN&gl=US"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=60px /></a>
+
+Download the App - [AQI MIT-WPU](https://play.google.com/store/apps/details?id=in.creationdevs.aqi&hl=en_IN&gl=US) 
+
 
 ### What is AQI MIT-WPU App?
 AQI MIT-WPU app provides real-time Air quality measurements around MIT-WPU Campus,Pune,Maharashtra,India. 
