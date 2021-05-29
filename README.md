@@ -7,21 +7,24 @@ Members -
 [Uday More](https://github.com/udayvmore1),
 [Ashutosh Gugnani](https://github.com/ashutoshgugnani),
 Gaurav Sarawgi
+
+Mentors - Dr. Krishna Warhade and Dr. Mangesh Bedekar
 ***
 
 
 <a href="https://play.google.com/store/apps/details?id=in.creationdevs.aqi&hl=en_IN&gl=US"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=60px /></a>
 
+Rating : :star::star::star::star::star: 4.6       Downloads - 1,000+
+
 Download the App - [AQI MIT-WPU](https://play.google.com/store/apps/details?id=in.creationdevs.aqi&hl=en_IN&gl=US) 
 
 
 ### What is AQI MIT-WPU App?
-AQI MIT-WPU app provides real-time Air quality measurements around MIT-WPU Campus,Pune,Maharashtra,India. 
+  AQI MIT-WPU app provides real-time Air quality measurements around MIT-WPU Campus,Pune,Maharashtra,India. 
 
-Dr Vishwanath Karad MIT-World Peace University (MIT-WPU) is situated in Pune- the cultural capital of Maharashtra.
-MIT WPU was established in the year 1983 by Prof.Dr.Vishwanath D. Karad and is among the first engineering colleges in the private sector in Maharashtra.
+  This app is developed by Dr Vishwanath Karad MIT-WPU Pune and has been launched with the support of SAFAR-India, Indian Institute of Tropical Meteorology, Pune on 5 June 2019 on the occasion on <b> World Environmental Day </b>.
 
-This app is developed by MIT-WPU Pune and has been launched with the support of SAFAR-India, Indian Institute of Tropical Meteorology, Pune. In addition to the real time information on the air quality index, the citizens can learn about associated health advisories and Do's and Don'ts. Monitoring staion at MIT-WPU collects data of the concentration of Particulate Matter i.e. PM2.5 and PM10 every hour.
+  In addition to the real time information on the air quality index, the citizens can learn about associated health advisories and Do's and Don'ts. Monitoring staion at MIT-WPU collects data of the concentration of Particulate Matter i.e. PM2.5 and PM10 every hour.
 This data helps to calculate AQI and thus, find the leading Air Pollutant for the day.
 
 ### What are the different categories of AQI?
@@ -55,6 +58,8 @@ Health Risk: Triggers health alert, Everyone may experience health effects.  Sig
 
 Health Advisory: Everyone should avoid any outdoor physical activity.
 Health Risk: Serious risk of respiratory problems.
+
+
 
 
 
