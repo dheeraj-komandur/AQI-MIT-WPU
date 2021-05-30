@@ -60,6 +60,20 @@ Health Advisory: Everyone should avoid any outdoor physical activity.
 Health Risk: Serious risk of respiratory problems.
 
 
+src : wikipedia.com
+![alt text](allPolutants.png "image title")
+
+### Where is the Air Quality Monitering Station Located?
+
+The AQMS is located at MIT - World Peace University, Pune, India.
+
+<img src="AQIMoniteringStation.jpeg" alt="drawing" width="400"/>
+
+### When was this project launched?
+
+This project was launched by executives of MIT WPU on 5th June 2019 on the occasion of <b> World Environmental Day </b> and inaugural anniversary of the institution.
+
+<img src="EventPhoto.jpeg" alt="drawing" width="400"/>
 
 
 
