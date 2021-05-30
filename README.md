@@ -72,11 +72,26 @@ The AQMS is located at MIT - World Peace University, Pune, India.
 ### When was this project launched?
 
 This project was launched by executives of MIT WPU on 5th June 2019 on the occasion of <b> World Environmental Day </b> and inaugural anniversary of the institution.
-
+<div>
 <img src="EventPhoto.jpeg" alt="drawing" width="400"/>
+<img src="teamphoto.jpeg" alt="drawing" width="400"/>
+</div>
+
+### What does the app look like?
+
+<div>
+<img src="ss2.jpeg" alt="drawing" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="ss3.jpeg" alt="drawing" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="ss4.jpeg" alt="drawing" width="250"/>
+</div>
+
+### Article published in Pune Mirror (Times Group) Newspaper
+
+<div>
+<img src="ss1.jpeg" alt="drawing" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="newspaper.jpeg" alt="drawing" width="250"/> 
+</div>
 
 
 
-
-
-
+[Link to Newspaper Article](https://github.com/dheeraj-komandur/AQI-MIT-WPU/blob/master/pune%20Mirror%204%20June%202019_1%20(1).pdf)
